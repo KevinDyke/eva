@@ -1,3 +1,3 @@
 # eva
 
-Lisp interpreter written in Node-js. [Udemy Building and interpreter from Scratch]
+Lisp interpreter written in Node-js. [Udemy Building an interpreter from Scratch]
