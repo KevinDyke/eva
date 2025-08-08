@@ -1,4 +1,5 @@
 const assert = require('assert');
+const testUtil = require('./test-util');
 
 module.exports = eva => {
 
@@ -62,4 +63,13 @@ module.exports = eva => {
 
         ]),
     100);
+
+    testUtil.test(eva,
+    `
+        (begin
+          (var x 10)
+          (var y 20)
+          (+ (* x 10) y))
+    `, 
+    120);
 };
