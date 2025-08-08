@@ -7,7 +7,7 @@ const tests = [
     require('./variables.js'),
     require('./block-test.js'),
     require('./if-test.js'),
-    require('./while-test.js')
+    require('./while-test.js'),
 ];
 
 const eva = new Eva(new Environment({
