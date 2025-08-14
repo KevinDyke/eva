@@ -66,10 +66,10 @@ module.exports = eva => {
 
     testUtil.test(eva,
     `
-        (begin
-          (var x 10)
-          (var y 20)
-          (+ (* x 10) y))
+    (begin
+        (var x 10)
+        (var y 20)
+        (+ (* x 10) y))
     `, 
     120);
 };
