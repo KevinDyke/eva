@@ -10,6 +10,7 @@ const tests = [
     require('./while-test.js'),
     require('./built-in-functions-test.js'),
     require('./user-defined-functions-test.js'),
+    require('./lambda-test.js'),
 ];
 
 const eva = new Eva();

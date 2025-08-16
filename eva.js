@@ -96,6 +96,18 @@ class Eva {
         }
 
         // ------------------------------------------------------
+        // Lambda function: (lambda (x) (* x x))
+        if (exp[0] === 'lambda') {
+            const [_tag, params, body] = exp;
+
+            return {
+                params,
+                body,
+                env,
+            };
+        }
+
+        // ------------------------------------------------------
         // Functions calls:
         //
         // (print "Hello World")
