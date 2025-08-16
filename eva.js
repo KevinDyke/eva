@@ -83,16 +83,16 @@ class Eva {
 
         // ------------------------------------------------------
         // Function decleration: (def square (x) (* x x))
+        // 
+        // Syntatic sugar for: (var square (lambda (x) (* x x)))
         if (exp[0] === 'def') {
             const [_tag, name, params, body] = exp;
 
-            const fn = {
-                params,
-                body,
-                env, // Clourse!
-            };
+            // JIT-transpile to a variable decleration
 
-            return env.define(name, fn);
+            const varExp = ['var', name, ['lambda', params, body]];
+
+            return this.eval(varExp, env);
         }
 
         // ------------------------------------------------------
