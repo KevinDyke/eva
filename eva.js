@@ -64,7 +64,7 @@ class Eva {
         // (if <condition> <consequent> <alternate>)
         if (exp[0] === 'if') {
             const [_tag, condition, consequent, alternate] = exp;
-            if (this.eval(condition)) {
+            if (this.eval(condition,env)) {
                 return this.eval(consequent, env);
             }
             return this.eval(alternate, env);

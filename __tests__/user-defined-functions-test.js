@@ -33,27 +33,46 @@ module.exports = eva => {
     // Closure case
     test(eva, `
             
-            (begin
+        (begin
+    
+            (var value 100)
+
+            (def calc (x y)
+                (begin
+                    (var z (+ x y))
+
+                    (def inner (foo)
+                    (+ (+ foo z) value))
+
+                inner 
+
+            ))       
         
-                (var value 100)
+            (var fn (calc 10 20))
 
-                (def calc (x y)
-                   (begin
-                     (var z (+ x y))
+            (fn 30)
 
-                     (def inner (foo)
-                        (+ (+ foo z) value))
-
-                    inner 
-
-                ))       
-           
-                (var fn (calc 10 20))
-
-                (fn 30)
-
-            )    
+        )    
             
     `, 160);
+
+    // Recursive function
+
+  test(eva,
+  `
+
+    (begin
+
+      (def factorial (x)
+        (if (= x 1)
+          1
+          (* x (factorial (- x 1)))))
+
+      (factorial 5)
+
+    )
+
+  `,
+  120);
 
 };
