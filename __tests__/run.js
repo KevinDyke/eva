@@ -11,6 +11,14 @@ const tests = [
     require('./built-in-functions-test.js'),
     require('./user-defined-functions-test.js'),
     require('./lambda-test.js'),
+    require('./switch-test.js'),
+    require('./for-test.js'),
+    require('./inc-test.js'),
+    require('./dec-test.js'),
+    require('./inc-val-test.js'),
+    require('./dec-val-test.js'),
+    require('./mul-val-test.js'),
+    require('./div-val-test.js'),
 ];
 
 const eva = new Eva();
