@@ -104,12 +104,12 @@ let tokenizer;
  * See `--custom-tokinzer` to skip this generation, and use a custom one.
  */
 
-const lexRules = [[/^\(/, function() { return "'('"; }],
-[/^\)/, function() { return "')'"; }],
-[/^\s+/, function() { /* skip whitespace */ }],
+const lexRules = [[/^\s+/, function() { /* skip whitespace */ }],
 [/^"[^\"]*"/, function() { return 'STRING' }],
 [/^\d+/, function() { return 'NUMBER' }],
-[/^[\w\-+*=<>/]+/, function() { return 'SYMBOL' }]];
+[/^[\w\-+*=<>/]+/, function() { return 'SYMBOL' }],
+[/^\(/, function() { return "'('"; }],
+[/^\)/, function() { return "')'"; }]];
 const lexRulesByConditions = {"INITIAL":[0,1,2,3,4,5]};
 
 const EOF_TOKEN = {
